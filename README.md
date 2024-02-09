@@ -17,3 +17,5 @@ cd docker
 ```
 build-compose up --build
 ```
+
+![image](https://github.com/yMarceloMaia/rinha-de-backend-2024-q1-yMarceloMaia/assets/91164631/2fb0bb4d-2327-4c4c-85c5-90844afc1958)
