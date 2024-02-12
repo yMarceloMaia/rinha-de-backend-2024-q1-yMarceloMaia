@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   api1: &api
-    image: marcelo/rinha-backend-v3
+    image: ymarcelomaia/rinha-backend-v3
     hostname: api1
     restart: always
     environment:
