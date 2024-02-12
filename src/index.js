@@ -9,14 +9,14 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const port = 9999;
+const port = process.env.PORT;
 
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD,
-    port: +process.env.DB_PORT,
+    user: process.env.POSTGRES_USER,
+    host: process.env.POSTGRES_HOST,
+    database: process.env.POSTGRES_DATABASE,
+    password: process.env.POSTGRES_PASSWORD,
+    port: +process.env.POSTGRES_PORT,
 });
 
 pool
@@ -27,6 +27,10 @@ pool
 app.listen(port, () => {
     console.log(`Rodando na porta localhost:${port}`)
 });
+
+app.get("/", (req, res) => {
+    res.status(200).send("ok")
+})
 
 // Criar transacoes
 app.post("/clientes/:id/transacoes", async (req, res) => {
